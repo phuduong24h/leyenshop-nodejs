@@ -1,0 +1,60 @@
+{
+  "root": true,
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "plugins": ["import", "simple-import-sort", "unused-imports", "@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "comma-dangle": "off",
+    "global-require": "off",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "no-await-in-loop": "warn",
+    "no-param-reassign": "warn",
+    "no-plusplus": "warn",
+    "no-undef": "warn",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "off",
+    "node/no-missing-import": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      },
+      {
+        "usePrettierrc": true
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        },
+        "groups": ["external", "builtin", "internal", ["parent", "sibling"], "index", "type", "object"],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "group": "external",
+            "pattern": "express",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["express"]
+      }
+    ]
+  }
+}

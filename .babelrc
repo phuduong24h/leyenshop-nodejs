@@ -1,0 +1,28 @@
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }], "@babel/preset-typescript"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "configs": "./src/configs",
+          "@constants": "./src/constants",
+          "controllers": "./src/controllers",
+          "enums": "./src/enums",
+          "middlewares": "./src/middlewares",
+          "models": "./src/models",
+          "routes": "./src/routes",
+          "services": "./src/services",
+          "swaggers": "./src/swaggers",
+          "test": "./src/test",
+          "types": "./src/types",
+          "utils": "./src/utils",
+          "src": "./src",
+          "*": ["*", "./node_modules"]
+        },
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ]
+  ]
+}
